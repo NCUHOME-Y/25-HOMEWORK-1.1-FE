@@ -10,12 +10,12 @@
     width: 29%;
     height: 800px;
     background-color:#F5F5F5;
-    padding-left: 15px;
+    padding-left: 25px;
     padding-right: 5px;
 }
 .right {
     display: inline-block;
-    width: 40%;
+    width: 60%;
     padding-left: 25px;
     padding-bottom: 10px;  
 }
