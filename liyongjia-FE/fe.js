@@ -7,7 +7,7 @@ const skill = await fetch(URL + '/skillList');
 
 // 获取元素
 const nameElement = document.getElementById('name');
-const photoElement = document.getElementById('photo');
+const phoneElement = document.getElementById('phone');
 const emailElement = document.getElementById('email');
 const skillElement = document.getElementById('skill');
 
@@ -33,10 +33,34 @@ if (!skill.ok) {
     skillElement.innerHTML = "技能列表获取失败 我可能是一个茶壶 🫖";         
     throw new Error(`网络请求失败，状态码:418`);
 }
+// const skillDataTure = [];
+// for (const skillName in skillData){
+//     if (skillData.hasOwnProperty(skillName) == true ) {
+//         skillDataTure.push(skillName);
+//     }  
+// }
+// if (trueSkills.length > 0) {
+//     // 2. 初始化 HTML 字符串，创建一个无序列表 <ul>
+//     let skillHtml = '<ul class="skills-list">';
+    
+//     // 3. 遍历筛选后的技能数组，为每个技能创建 <li> 标签
+//     trueSkills.forEach(skill => {
+//         skillHtml += `<li>${skill}</li>`; // 拼接：<li>技能名</li>
+//     });
+    
+//     // 4. 闭合无序列表标签
+//     skillHtml += '</ul>';
+    
+//     // 5. 将生成的 HTML 插入到页面元素中
+//     skillElement.innerHTML = skillHtml;
+// } else {
+//     // 6. 如果没有符合条件的技能，显示提示文本
+//     skillElement.innerHTML = "暂无已掌握的技能";
+// }
 
 
 // 将数据插入到 HTML 元素中
 nameElement.innerHTML = data.name;
-photoElement.innerHTML = "电话:" + data.phone;
+phoneElement.innerHTML = "电话:" + data.phone;
 emailElement.innerHTML = "邮箱:" + data.email;
-skillElement.innerHTML = skillData
+skillElement.innerHTML = skillHtml
