@@ -1,0 +1,8 @@
+{
+"volleyball": true,
+"badminton": true,
+"basketball": false,
+"fps": true,
+"java":false,
+"python":false
+}

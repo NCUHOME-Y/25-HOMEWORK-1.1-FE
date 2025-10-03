@@ -33,7 +33,7 @@ margin: 10px 10px 0 10px;
   font-size: 30px;
 }
 .info{
-  margin: 20px 0 0 10px;
+  margin: 20px 0 0 25px;
   font-size: 15px;
 }
 .tip{
@@ -53,5 +53,8 @@ margin: 10px 10px 0 10px;
 .son{
    margin: 10px 15px 20px 10px;
   font-size: 18px;
-  
+  }
+  .content{
+margin: 10px 0 10px 10px;
+font-size: 50px;
 }
