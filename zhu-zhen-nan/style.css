@@ -25,7 +25,7 @@ hr {
 .resume-container {
     margin: 5px;
     border: 1px solid whitesmoke;
-    padding: 0px;
+    padding: 0;
     font-size: 0;
     height: 520px;
 }
