@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+hr {
+    border: none;
+    border-top: 1px solid whitesmoke;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 body {
     background: #f3f0f0;
     margin: 20px;
@@ -45,6 +52,14 @@ body {
     height: auto;
     display: block;
 }
+
+/* .contact-info {
+    margin-bottom: 20px;
+}
+
+.skill-section {
+    margin-top: 10px;
+} */
 
 .skill-title {
     display: inline;
