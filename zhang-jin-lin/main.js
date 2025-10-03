@@ -1,4 +1,4 @@
-async function fetchData() {
+async function myfetch() {
     const res1 = await fetch('./baseInfo.json');
     const data1 = await res1.json();
     console.log("response:", res1);
@@ -11,12 +11,9 @@ async function fetchData() {
     document.getElementById('number').textContent = data1.number;
     document.getElementById('qq').textContent = data1.qq;
     document.getElementById('email').textContent = data1.email;
-basicInfoID=data1.id
+ const basicInfoID=data1.id
 console.log('basicInfoID:',basicInfoID)
-}
-fetchData();
 
-async function fetchSkill() {
   if(Math.random()<.3){
 const err=new Error("i'm a teapot")
 err.status=418
@@ -35,17 +32,21 @@ Object.entries(data2).forEach(([skillname, value]) => {
         li.className = 'info';
         document.getElementById('skill').appendChild(li);
     }
-});
-}}
-fetchSkill();
+})};
 
-async function fetchIntroduction {
+
 if(basicInfoID===1){
-const res3= await fetch('./selfIntroductionid=1')
+const res3= await fetch('./selfIntroductionid=1.json')
 const data3=await res3.json()
 console.log("response:", res3);
     console.log("ok:", res3.ok);
 document.getElementById('words').textContent=data3.words
 }
+if(basicInfoID===''){
+  document.getElementById('words').textContent="400:id无效"
+  }
+if(basicInfoID!==1&&basicInfoID!==''){
+  document.getElementById('words').textContent="404:未找到该用户"
 }
-fetchIntroduction();
+}
+myfetch()
