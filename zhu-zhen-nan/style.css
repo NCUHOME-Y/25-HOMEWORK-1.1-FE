@@ -27,7 +27,7 @@ hr {
     border: 1px solid whitesmoke;
     padding: 0;
     font-size: 0;
-    height: 520px;
+    height: 600px;
 }
 
 /* 左侧边栏 */
@@ -57,6 +57,18 @@ hr {
 
 .skill-title {
     display: inline;
+}
+
+.left-sidebar .contact-item {
+    line-height: 1.8;
+    margin-bottom: 5px;
+}
+
+.left-sidebar .skill-item {
+    line-height: 1.8;
+    /* 行高 */
+    margin-bottom: 5px;
+    /* 段落间距 */
 }
 
 /* 右侧边栏 */
