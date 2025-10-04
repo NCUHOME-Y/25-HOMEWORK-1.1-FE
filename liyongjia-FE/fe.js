@@ -34,8 +34,9 @@ if (!skill.ok) {
     throw new Error(`网络请求失败，状态码:418`);
 }
 
-// 此为AI帮助
+// 下面的添加技能列表为AI帮助
 
+//1.筛选出值为 true 的技能名称
 const skillDataTure = [];
 for (const skillName in skillData){
     if (skillData[skillName] === true ) {
