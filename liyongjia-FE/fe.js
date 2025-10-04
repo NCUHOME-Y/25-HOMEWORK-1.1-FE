@@ -34,13 +34,11 @@ if (!skill.ok) {
     throw new Error(`网络请求失败，状态码:418`);
 }
 
-
-
 // 此为AI帮助
 
 const skillDataTure = [];
 for (const skillName in skillData){
-    if (skillData.hasOwnProperty(skillName) == true ) {
+    if (skillData[skillName] === true ) {
         skillDataTure.push(skillName);
     }  
 }
@@ -62,7 +60,6 @@ if (skillDataTure.length > 0) {
     // 6. 如果没有符合条件的技能，显示提示文本
     skillElement.innerHTML = "暂无已掌握的技能";
 }
-
 
 // 将数据插入到 HTML 元素中
 nameElement.innerHTML = data.name;
