@@ -73,5 +73,23 @@ const selfIntroductionData = await selfIntroduction.json();
 console.log("selfIntroductionData: ",selfIntroductionData);
 console.log("selfIntroductionData: ",selfIntroductionData.ok);
 const self = document.getElementById('self');
-self.innerHTML = selfIntroductionData.selfIntroduction
+self.innerHTML = selfIntroductionData.selfIntroduction;
+
+const post_eduBackground = await fetch(URL + '/eduExperience/seri',{
+    method:'POST',
+    headers:{
+        'Content-Type': 'application/json',  
+    },
+    body:JSON.stringify({"id":data.id}),
+}
+);
+
+const eduBackgroundData = await post_eduBackground.json();
+console.log("eduBackgroundData:",eduBackgroundData);
+const eduSchool = eduBackgroundData.eduBackground[0].school;
+const eduContent = eduBackgroundData.eduBackground[0].content;
+const content = document.getElementById('content');
+const school = document.getElementById('school');
+school.innerHTML = eduSchool;
+content.innerHTML = eduContent;
 
