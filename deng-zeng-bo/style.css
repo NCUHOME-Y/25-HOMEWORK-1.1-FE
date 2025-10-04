@@ -1,0 +1,91 @@
+
+
+        body{
+            background-color:rgba(220, 230, 228, 0.47);
+            
+        }
+        .left{
+            
+            width:15%;
+            background-color: rgb(118, 156, 203);
+            margin-left: 300px;
+            
+        }
+        img{
+           width:200px ;
+           padding: 15px;
+           border-radius: 100px;
+        }
+        .left, .right{
+           
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            margin-top: 100px;
+        }
+
+        .right{
+            padding:30px;
+            background-color: rgb(156, 174, 174);
+            width:50%;
+            height: 638px;
+        }
+        .information{
+            padding: 30px;
+            
+        }
+        
+        .name{
+            font-size: 25px;
+        }
+        
+        .ability{
+            padding: 30px;
+        }
+        .title{
+            font-size: 25px;
+        }
+
+        .title1{
+            font-size: 25px;
+        }
+
+        .title2{
+            font-size: 25px;
+            margin-top: 30px;
+        }
+        .title3{
+            font-size: 25px;
+            margin-top: 30px;
+        }
+
+        .smalltitle1{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .smalltitle2{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .smalltitle3{
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .Content1{
+            margin-top: 10px;
+        }
+
+        .content{
+            margin-top: 5px;
+        }
+
+        .Content1{
+            margin-top: 10px;
+        }
+
+        .Content3{
+            margin-top: 10px;
+        }
+
+ 
