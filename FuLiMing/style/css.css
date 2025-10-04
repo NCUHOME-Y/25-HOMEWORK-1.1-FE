@@ -24,7 +24,7 @@ body {
     height: 8vw;
 }
 
-#title1 {
+.title1 {
     margin-left: 1vw;
     font-size: 1.8em;
 }
@@ -44,7 +44,7 @@ body {
     background-color: white;
 }
 
-#title2 {
+.title2 {
     font-size: 1.5em;
     margin: 1vw 1vh;
     color: #2c3e50;
