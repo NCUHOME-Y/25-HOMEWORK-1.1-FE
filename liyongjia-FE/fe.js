@@ -79,10 +79,10 @@ if (skillDataTure.length > 0) {
     
     // 5. 将生成的 HTML 插入到页面元素中
     skillElement.innerHTML = skillHtml;
-} else {
-    // 6. 如果没有符合条件的技能，显示提示文本
-    skillElement.innerHTML = "暂无已掌握的技能";
-}
+    } else {
+     // 6. 如果没有符合条件的技能，显示提示文本
+     skillElement.innerHTML = "暂无已掌握的技能";
+    }
 
 // 将数据插入到 HTML 元素中
 nameElement.innerHTML = data.name;
