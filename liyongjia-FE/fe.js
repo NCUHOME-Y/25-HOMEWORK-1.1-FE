@@ -1,3 +1,25 @@
+// 感谢学长们帮助
+document.addEventListener("DOMContentLoaded", function () {
+// WebSocket
+    const wb = new WebSocket("ws://teaching.ncuos.com/projectExperience/basicWS/seri");
+    wb.onopen = () => {
+        console.log("WB上线");
+    };
+    wb.onmessage = (event) =>{
+        console.log("接受数据：",event.data);
+        const wbData = JSON.parse(event.data);
+        console.log("wbData:", wbData);
+        
+        const experienceWeb = wbData.projectExperience[0].experience;
+        const experienceContentWeb = wbData.projectExperience[0].content;
+        const experience = document.getElementById("experience");
+        const experienceContent = document.getElementById("experienceContent");
+        experience.innerHTML = experienceWeb;
+        experienceContent.innerHTML = experienceContentWeb;
+    };
+    
+});
+
 const URL = "https://teaching.ncuos.com"
 
 // fetch 默认是 GET 方法，POST 等方法请看上面的文档 或者问 AI
@@ -83,7 +105,7 @@ const post_eduBackground = await fetch(URL + '/eduExperience/seri',{
     body:JSON.stringify({"id":data.id}),
 }
 );
-
+// POST/eduExperience
 const eduBackgroundData = await post_eduBackground.json();
 console.log("eduBackgroundData:",eduBackgroundData);
 const eduSchool = eduBackgroundData.eduBackground[0].school;
