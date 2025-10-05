@@ -100,54 +100,53 @@
     </div>
     <script>
         let id1='';
-        function set(){
-       try{ const URL="https://teaching.ncuos.com";
-        const res1=fetch(`${URL}/baseInfo`);
+        let ws=null;
+        const URL = 'https://teaching.ncuos.com';
+    async function set_base(){
+        try{ 
+        const res1=await fetch(`${URL}/baseInfo`);
         if(!res1.ok){
             throw new Error('嘻嘻，没找到呢')
         }
-        const data=res1.json();
+        const data=await res1.json();
         id1=data.id;
         document.getElementById("name").textContent=data.name;
-        document.getElementById("phone").textContent=data.phone;
-        document.getElementById("git").textContent=data.githubList;
-        document.getElementById("email").textContent=data.email;
+        document.getElementById("phone").textContent="电话号码："+data.phone;
+    document.getElementById('git').textContent = "github："+data.githubLink;
+        document.getElementById("email").textContent="email："+data.email;
+         await Promise.all([set_intro(), edu(), set_proj()]);
+        }catch  (e){
+            console.error(e.message);
         }
-        catch  (e){
-            console.error(e.massage);
-        }
-        set_intro();
-        set_edu();
-        set_proj();
  }
     async function set_intro(){
         try{
-            const res2=fetch(`${URL}/selfIntroduction?id=${id1}`);
+            const res2=await fetch(`${URL}/selfIntroduction?id=${id1}`);
             if(!res2.ok)throw new Error("嘻嘻");
-            const data2=res2.json();
-            document.getElementById("intro").textContent=date.selfIntroduction;
+            const data2=await res2.json();
+            document.getElementById("intro").textContent=data2.selfIntroduction;
         }catch (e){
-            console.error(e.massage);
+            console.error(e.message);
         }
     }
         
-    async function edu(){
+    async function set_edu(){
         try{
-            const res3=fetch(`${URL}/eduExperience`,{
+            const res3=await fetch(`${URL}/eduExperience`,{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({id:id1})
             });
             if(!res3.ok)throw new Error("666");
-            const date3=res3.json();
-            document.getElementById("edu").textContent=date3.eduBackgroud;
-        }catch{
-            console.error(e.massage);
+            const data3=await res3.json();
+            document.getElementById("edu").textContent=data3.eduBackground;
+        }catch (e){
+            console.error(e.message);
         }
     }
-    async function set_proj(){
+     function set_proj(){
         if(ws){ws.close()}
-        const ws =new WebSocket(`${URL}/projectExperience/basicWS`);
+        ws =new WebSocket(`${URL}/projectExperience/basicWS`);
         ws.onmessage=e=>{
             try{
                 const proj=JSON.parse(e.data);
@@ -158,9 +157,9 @@
         }
          ws.onerror=()=>console.error("链接失败");
     }
-    window.onload=()=>set();
+    window.onload=()=>set_base();
     document.getElementById("shuanxing").addEventListener("click",function(){
-        set();
+        set_base();
     });
     </script>
 </body>
