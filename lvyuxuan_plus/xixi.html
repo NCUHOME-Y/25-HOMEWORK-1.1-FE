@@ -86,15 +86,15 @@
         <div class="card_right_body_conect">
             <div class="card_right_body_conect">
                 <h2 class="h2">个人简介</h2>
-                <p class="intro">正在加载中ing</p>
+                <p id="intro">正在加载中ing</p>
             </div>
             <div class="card_right_body_conect">
                 <h2 class="h2">教育背景</h2>
-                <P class="edu">正在加载中ing</P>
+                <P id="edu">正在加载中ing</P>
             </div>
             <div class="card_right_body_conect">
                 <h2 class="h2">项目经历</h2>
-                <p class="program">正在加载中ing</p>
+                <p id="program">正在加载中ing</p>
             </div>
         </div>
     </div>
@@ -114,10 +114,11 @@
         document.getElementById("phone").textContent="电话号码："+data.phone;
     document.getElementById('git').textContent = "github："+data.githubLink;
         document.getElementById("email").textContent="email："+data.email;
-         await Promise.all([set_intro(), edu(), set_proj()]);
+         await Promise.all([set_intro(), set_edu(), set_proj()]);
         }catch  (e){
             console.error(e.message);
         }
+
  }
     async function set_intro(){
         try{
@@ -146,7 +147,7 @@
     }
      function set_proj(){
         if(ws){ws.close()}
-        ws =new WebSocket(`${URL}/projectExperience/basicWS`);
+        ws =new WebSocket(`wss://teaching.ncuos.com/projectExperience/basicWS`);
         ws.onmessage=e=>{
             try{
                 const proj=JSON.parse(e.data);
