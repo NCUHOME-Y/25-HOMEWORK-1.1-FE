@@ -1,10 +1,10 @@
 body{
     background-color: cadetblue;
 }
-.box-alternet{
+.box-alternate{
      background-color: bisque;
      padding: 10px;
-     height: 500px;
+     min-height: 500px;
      width: 50%;
      margin: 0 auto;
      margin-top: 50px;
@@ -15,7 +15,7 @@ body{
     display: inline-block; 
     background-color: bisque;
     padding: 10px;
-    height: 500px;
+    min-height: 500px;
     width: 50%; 
     box-sizing: border-box;
     vertical-align: top;
@@ -25,7 +25,7 @@ body{
     display: inline-block;
     background-color: lightblue;
     padding: 10px;
-    height: 500px;
+    min-height: 500px;
     width: 50%;
     box-sizing: border-box;
     vertical-align: top;
@@ -33,8 +33,13 @@ body{
 }
 img{
     width: 100px;
-    height: 100px;
+    min-height: 100px;
     display: block;
+}
+.inline-box1{
+    display: inline-block;
+    margin: 10px;
+    background-color: bisque;
 }
 .inline-box2{
     display: inline-block;
