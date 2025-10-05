@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>个人简历动态加载</title>
+  <style>
+    body{margin:20px;background:#f5f5f5;font-family:Arial,sans-serif;display:flex;justify-content:center}
+    .card{width:800px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);padding:20px}
+    h1,h2{margin:0 0 10px}
+    .loading{color:#999}
+    .error{color:red}
+    button{margin:10px 0;padding:6px 12px}
+    ul{padding-left:20px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>个人简历</h1>
+    <button id="refreshBtn">刷新</button>
+
+    <h2>基本信息</h2>
+    <div id="base" class="loading">正在加载中...</div>
+
+    <h2>技能列表</h2>
+    <div id="skill" class="loading">正在加载中...</div>
+
+    <h2>自我介绍</h2>
+    <div id="intro" class="loading">正在加载中...</div>
+
+    <h2>教育背景</h2>
+    <div id="edu" class="loading">正在加载中...</div>
+
+    <h2>项目经历（实时推送）</h2>
+    <ul id="project" class="loading">正在加载中...</ul>
+  </div>
+
+  <script>
+    const URL = 'https://teaching.ncuos.com';
+    let basicInfoId = '';          // 全局保存 id
+    let ws = null;                 // WebSocket 实例
+
+    // ===== 统一错误处理 =====
+    function showError(container, msg) {
+      document.getElementById(container).innerHTML = `<p class="error">${msg}</p>`;
+    }
+
+    // ===== 加载状态 =====
+    function showLoading(container) {
+      document.getElementById(container).innerHTML = '<p class="loading">正在加载中...</p>';
+    }
+
+    // ===== 1. 基本信息 =====
+    async function loadBase() {
+      showLoading('base');
+      try {
+        const res = await fetch(`${URL}/baseInfo`);
+        if (!res.ok) throw new Error('基础信息请求失败');
+        const data = await res.json();
+        basicInfoId = data.id;   // 保存 id
+        document.getElementById('base').innerHTML = `
+          <p>姓名：${data.name}</p>
+          <p>ID：${data.id}</p>
+          <p>电话：${data.phone}</p>
+          <p>邮箱：${data.email}</p>
+          <p>GitHub：${data.githubLink}</p>
+        `;
+        // 成功后并行加载后续数据
+        loadSkill();
+        loadIntro();
+        loadEdu();
+        loadProjectWS(); // WebSocket
+      } catch (e) {
+        showError('base', e.message);
+      }
+    }
+
+    // ===== 2. 技能列表（含 418 彩蛋） =====
+    async function loadSkill() {
+      showLoading('skill');
+      const tryFetch = async () => {
+        const res = await fetch(`${URL}/skillList`);
+        if (res.status === 418) {
+          document.getElementById('skill').innerHTML = '<p>获取技能失败，我可能是一个茶壶 🫖</p>';
+          return;
+        }
+        if (!res.ok) throw new Error('技能列表请求失败');
+        const skills = await res.json();
+        const trueSkills = Object.keys(skills).filter(k => skills[k]);
+        const html = trueSkills.length ? `<ul>${trueSkills.map(s => `<li>${s}</li>`).join('')}</ul>` : '<p>暂无技能</p>';
+        document.getElementById('skill').innerHTML = html;
+      };
+      try { await tryFetch(); } catch (e) { showError('skill', e.message); }
+    }
+
+    // ===== 3. 自我介绍 =====
+    async function loadIntro() {
+      showLoading('intro');
+      try {
+        const res = await fetch(`${URL}/selfIntroduction?id=${basicInfoId}`);
+        if (!res.ok) throw new Error('自我介绍请求失败');
+        const data = await res.json();
+        document.getElementById('intro').innerHTML = `<p>${data.selfIntroduction}</p>`;
+      } catch (e) {
+        showError('intro', e.message);
+      }
+    }
+
+    // ===== 4. 教育背景（POST 体） =====
+    async function loadEdu() {
+      showLoading('edu');
+      try {
+        const res = await fetch(`${URL}/eduExperience`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: basicInfoId })
+        });
+        if (!res.ok) throw new Error('教育背景请求失败');
+        const data = await res.json();
+        document.getElementById('edu').innerHTML = `<p>${data.eduBackground}</p>`;
+      } catch (e) {
+        showError('edu', e.message);
+      }
+    }
+
+    // ===== 5. WebSocket 实时项目经历 =====
+    function loadProjectWS() {
+      document.getElementById('project').innerHTML = '<p class="loading">等待实时推送...</p>';
+      if (ws) ws.close(); // 先关旧连接
+      ws = new WebSocket(`${URL}/projectExperience/basicWS`);
+      ws.onmessage = e => {
+        try {
+          const proj = JSON.parse(e.data);
+          const li = document.createElement('li');
+          li.innerHTML = `<h3>${proj.name || proj.title}</h3><p>${proj.description}</p>`;
+          document.getElementById('project').appendChild(li);
+          // 第一次收到后去掉“等待”提示
+          const loading = document.querySelector('#project .loading');
+          if (loading) loading.remove();
+        } catch (err) {
+          console.error('项目推送解析失败:', err);
+        }
+      };
+      ws.onerror = () => showError('project', 'WebSocket 连接失败');
+    }
+
+    // ===== 刷新按钮 =====
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+      loadBase(); // 重新拉取全部数据
+    });
+
+    // ===== 页面加载完成后自动启动 =====
+    window.onload = () => loadBase();
+  </script>
+</body>
+</html>
