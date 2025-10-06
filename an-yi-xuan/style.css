@@ -1,0 +1,108 @@
+/* 全局样式和背景 */
+body {
+    background-color: whitesmoke;/*灰白*/
+    margin: 0;
+    padding: 30px 0; 
+    font-size: 15px;
+    line-height: 1.6; 
+    color: #333;/*黑*/
+}
+
+#container { 
+    width: 800px; 
+    margin: 0 auto; 
+    background-color: white; 
+    border: 1px solid lightgray; 
+    
+    /* 使用 overflow 来清除浮动，让容器包裹住内部元素,不然父容器高度为0 */
+    overflow: auto;
+}
+
+/*左侧栏*/
+#sidebar { 
+    width: 250px; 
+    padding: 30px;
+    background-color:whitesmoke;/*灰白*/
+    border-right: 1px solid lightgray;
+    
+    /* 使用 float 实现左侧浮动 ,不占据空间*//* 似乎Flexbox更加方便 */
+    float: left;
+}
+
+#avatar { 
+    width: 120px; 
+    height: 120px;
+    display: block; 
+    margin: 0 auto 20px auto; 
+
+    border-radius: 50%; /* 制作圆形头像 */
+}
+
+#sidebar-name { 
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* 左侧栏标题 */
+.sidebar-title { 
+    margin: 25px 0 10px 0; 
+    padding-bottom: 8px;
+    font-size: 18px;
+    color: #333; 
+    border-bottom: 2px solid dodgerblue; 
+}
+
+.contact-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.contact-section li, .skills-section li {
+    margin-bottom: 8px;
+}
+
+
+/*右侧*/
+#content { 
+    padding: 30px; 
+    
+    /* overflow:hidden 隐藏溢出容器的内容，并创建独立的布局环境 */
+    overflow: hidden; 
+}
+
+/* 右侧内容区块 */
+.section {
+    margin-bottom: 30px;
+}
+
+/* 右侧内容标题 */
+.section-title { 
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    color: darkblue; 
+    border-bottom: 2px solid darkblue; 
+}
+
+.project-card { 
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#content p { 
+    margin: 8px 0;
+    color: #555;
+}
