@@ -1,0 +1,64 @@
+
+body {
+    background-color: #eeeeee;
+}
+
+.box {
+    margin: 5vh 15vw;
+    height: 90vh;
+    width: 70vw;
+    font-family: "Microsoft Yahei";
+    border: solid 3px #e0e4e6;
+}
+
+.back1 {
+    width: 30%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: inline-block; 
+}
+
+#box1 {
+    margin: 1vw;
+    width: 8vw;
+    height: 8vw;
+}
+
+.title1 {
+    margin-left: 1vw;
+    font-size: 1.8em;
+}
+
+.information {
+    margin-left: 1vw;
+    margin-top: 0.4em;
+}
+
+#box3 {
+    margin-top: 3vh;
+}
+
+.back2 {
+    width: 70%;
+    height: 100%;
+    background-color: white;
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.title2 {
+    font-size: 1.5em;
+    margin: 1vw 1vh;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 1vh;
+}
+
+p {
+    margin-left: 2vw;
+    margin-right: 1vw;
+}
+
+.project-title {
+    margin-left: 1vw;
+}
