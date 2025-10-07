@@ -149,7 +149,8 @@
         ws.onmessage=e=>{
             try{
                 const proj=JSON.parse(e.data);
-                document.getElementById("program").innerHTML=`<h3>${proj.name}||${proj.title}</h3><p>${proj.description}</p>`;
+                 console.log("接收到项目数据:", proj);
+                document.getElementById("program").textContent=proj.projectExperience;
             }catch (err){
                 console.error(err);
             }
