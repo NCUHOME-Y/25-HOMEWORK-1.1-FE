@@ -1,0 +1,58 @@
+body {
+    margin: 30px;
+    font-size: 16px;
+    color: #0b0a0a96;
+    background-color: #adc8ebba;
+}
+
+.CV {
+    width: 920px;
+    margin: 0 auto;
+    border: 2px solid #75a8e087;
+    padding: 15px;
+    display: flex;
+    /*其实我挣扎过了但是实在不会对齐，margin-top会把整个行往下推，，*/
+}
+
+.left-part {
+    width: 250px;
+    background: #f7f6da;
+    padding: 17px;
+
+}
+
+.left-part img {
+    width: 140px;
+    height: 145px;
+}
+
+.left-part h1 {
+    font-size: 26px;
+    color: #384d8f;
+}
+
+
+.right-part {
+    width: 635px;
+    padding: 0 18px 0 18px;
+    display: inline-block;
+    background: #f7f6da;
+
+
+}
+
+
+.right-part .section h1 {
+    color: #384d8f;
+    font-size: 26px;
+    border-bottom: 2px solid #246081;
+    /* 标题下划线 */
+    padding-bottom: 6px;
+}
+
+
+
+
+p b {
+    font-size: 18px;
+}
