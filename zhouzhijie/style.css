@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 0;
+    font-size: 0;
+}
+
+.left-box {
+    width: 240px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.right-box {
+    width: 560px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.contact p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.skill-list {
+    margin-top: 20px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+.skill-list p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #666;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 20px;
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 5px;
+    margin-top: 0;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.section p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.section h3 {
+    color: #333;
+    margin: 10px 0 5px;
+}
