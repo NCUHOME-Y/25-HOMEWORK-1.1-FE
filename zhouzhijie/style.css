@@ -85,3 +85,7 @@ h1 {
     color: #333;
     margin: 10px 0 5px;
 }
+
+ul{
+    list-style-type: none;
+}
