@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林方魁个人简历</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            cursor:default;
+            caret-color:transparent;
+        }
+        body{
+            font-family:'Segoe UI','Microsoft YaHei',Arial,sans-serif;
+            color:rgba(14, 14, 14, 0.9);
+            background:linear-gradient(#66ccff1f,#66ccffa4,#0051ffaf,#0051ffe2);
+            min-height: 100vh;
+            overflow:auto;
+        }
+        .container{
+            width:900px;
+            background:rgb(255, 255, 255);
+            border-radius:15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin:50px auto;
+            padding:15px;
+            display: table;
+            table-layout: fixed;
+        }
+        .left{
+            display: table-cell;
+            width: 35%;
+            padding: 15px;
+            vertical-align:top;
+        }
+        .right{
+            display: table-cell;
+            width: 65%;
+            padding: 15px;
+            vertical-align:top;
+        }
+        .header{
+            background: linear-gradient(#66ccff, #2c80ff);
+            color: white;
+            padding:20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .header p{
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+        .header img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin: 15px auto;
+            object-fit: cover;
+        }
+        .portion{
+            border-left: 4px solid #2c80ff;
+            padding-left: 20px;
+            margin-bottom:30px;
+            transition: all 0.3s;
+        }
+        .portion:hover{
+            border-left: 4px solid #66ccff;
+            transform: translateX(2px) translateY(-1px);
+        }
+        .portion h2{
+            color: #2c80ff;
+            border-bottom:2px solid rgba(128, 128, 128, 0.25);
+            padding-bottom: 10px;
+            transition: all 0.3s;
+        }
+        .portion:hover h2{
+            color:#66ccff;
+        }
+        .part{
+            margin-top: 10px;
+            background-color: #fafbff;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #e8f1ff;
+            transition: all 0.3s;
+        }
+        .part:hover{
+            transform: translateX(1px) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 204, 255, 0.4);
+        }
+        .part h3{
+            border-bottom:1.5px solid #2c80ffe0;
+            padding: 10px;
+            margin-bottom:10px;
+            transition: all 0.3s;
+        }
+        .part h3:hover{
+            border-bottom:2px solid #66ccff;
+        }
+        .part a:not(.tag,.button){
+            color: #333;
+            text-decoration: none;
+            padding:3px 0;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .part a:not(.tag,.button):hover{
+            color: #66ccff;
+            cursor: pointer;
+            transform: translateX(1px) translateY(-1px);
+        }
+        .part a:has(img) {
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 300;
+        }
+        .part img{
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #d0e4ff;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .part img:hover{
+            transform: scale(1.02);
+            border-color: #66ccff;
+            box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
+            transform: translateX(1px) translateY(-1px);
+        }
+        .tag{
+            background-color: #66ccff20;
+            color: #2c80ff;
+            padding: 5px 12px;
+            margin:4px;
+            border-radius: 20px;
+            border: 2px solid #66ccff60;
+            white-space: nowrap;
+            display: inline-block;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor:pointer;
+        }
+        .tag:hover{
+            background-color: #66ccff40;
+            transform: translateX(1px) translateY(-1px);
+            box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
+        }
+        .button{
+            margin-top: 5px;
+            padding: 10px 15px;
+            background: linear-gradient(#66ccff, #2c80ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 550;
+            box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
+            cursor:pointer;
+            display: block;
+            width: fit-content;
+            transition: all 0.3s;
+        }
+        .button:hover {
+            transform: translateX(1px) translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 204, 255, 0.5);
+            background: linear-gradient(#2c80ff, #66ccff);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="header">
+                <img src="https://raw.githubusercontent.com/LFK404/trial/refs/heads/image/%E5%A4%B4%E5%83%8F.png" title="头像">
+                <h1>林方魁</h1>
+                <p>小登</p>
+            </div>
+            <div class="portion">
+                <h2>联系方式</h2>
+                <div class="part">
+                    <p style="padding:5px;color:#2c80ff"><strong>电话：</strong><a href="tel:15880993898">15880993898</a></p>
+                    <p style="padding:5px;color:#2c80ff"><strong>邮箱：</strong><a href="mailto:3909285203@qq.com" target="_blank">3909285203@qq.com</a></p>
+                    <p style="padding:5px;color:#2c80ff"><strong>GitHub：</strong><a href="https://github.com/LFK404" target="_blank">LFK404</a></p>
+                    <p style="padding:5px;color:#2c80ff"><strong>QQ：</strong><a href="https://im.qq.com/index/" target="_blank">3909285203</a></p>
+                </div>
+            </div>
+            <div class="portion">
+                <h2>技能标签</h2>
+                <div class="part">
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">吃饭</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">睡觉</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">打游戏</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">能不动</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">绝不动</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">摆烂烂</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">不想活</a>
+                    <a href="https://www.ncuos.com/" target="_blank" class="tag">毁灭吧</a>
+                </div>
+            </div>
+            <div class="portion">
+                <h2>教育背景</h2>
+                <div class="part">
+                    <p style="margin:4px"><strong>南昌大学 - 计算机科学与技术 (2025-2029)</strong></p>
+                        <p style="margin:4px;font-weight:400;text-indent: 2em;">主修课程：水课精髓、翘课学、摆烂技巧、唯我主义、闭目论、空想炼心法等</p>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="portion">
+                <h2>自我介绍</h2>
+                <div class="part">
+                    <p style="text-indent: 2em;">我是一个热爱编程和技术的学生，喜欢探索新技术和解决问题。在校期间积极参与各种编程竞赛和项目开发，积累了丰富的实践经验。希望能够在未来的职业生涯中不断提升自己，为社会创造更多价值。</p>
+                    <p style="font-weight:300;">(真的假的，我都不信)</p>
+                    <a href="https://ncuhomer.feishu.cn/wiki/OzaEwttJdi27gBk3cRzcCHQxnFh" target="_blank" class="button">📖 点击查看个人说明书 (´▽｀)</a>
+                </div>
+            </div>
+            <div class="portion">
+                <h2>项目经历</h2>
+                <div class="part">
+                    <h3>项目1 - 搜索界面</h3>
+                    <p style="text-indent: 2em">制作的第一个网页，当初是先以AI创作出了一个初版，然后根据初版，自己一行行理解一行行重新打出来的终版，中途也根据自己的想法修改了很多地方，加了一些小功能，增添了不少细节，现在看来还是有点简陋，样式还可以设计得更好一些，以后有时间得话再给它来个大升级吧。</p>
+                    <a href="https://raw.githubusercontent.com/LFK404/trial/image/面试考核AI初版.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/LFK404/trial/image/面试考核AI初版.png" title="AI生成初版">
+                        <br>AI生成初版
+                    </a>
+                    <a href="https://raw.githubusercontent.com/LFK404/trial/image/面试考核人工修改版.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/LFK404/trial/image/面试考核人工修改版.png" title="人工修改终版">
+                        <br>人工修改终版
+                    </a>
+                    <a href="https://htmlpreview.github.io/?https://github.com/LFK404/trial/blob/linfangkui/面试考核终版.html" target="_blank" class="button">🔍 访问搜索界面 (￣▽￣)</a>
+                </div>
+                <div class="part">
+                    <h3>项目2 - 个人简介</h3>
+                    <p style="text-indent: 2em">制作的第二个网页，经过前段时间的学习，又有了之前的经验，这次靠自己已经能写出上交版的大部分的内容了，就是还有一点的功能想实现还是得问AI，然后在交完了作业之后，我对这个项目本身还是不太满意，于是就有了AI升级初版来让我自己研究，然后最后的终版也是修改了很多细节，本次的个人简介也是用到了其中的很多技术。</p>
+                    <a href="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业.png" title="作业上交版">
+                        <br>作业上交版
+                    </a>
+                    <a href="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业AI升级版.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业AI升级版.png" title="AI升级初版">
+                        <br>AI升级初版
+                    </a>
+                    <a href="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业AI人工版.png" target="_blank">
+                        <img src="https://raw.githubusercontent.com/LFK404/trial/image/第一次作业AI人工版.png" title="人工修改终版">
+                        <br>人工修改终版
+                    </a>
+                    <a href="https://htmlpreview.github.io/?https://github.com/LFK404/trial/blob/linfangkui/linfangkui/第一次作业终版.html" target="_blank" class="button">🌐 访问个人简介 (*^▽^*)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
