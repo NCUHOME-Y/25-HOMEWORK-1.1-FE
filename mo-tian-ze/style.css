@@ -12,6 +12,32 @@ body {
     padding: 20px;
 }
 
+.container {
+    width: 1000px;
+    border: 1px #f0f04e;
+    margin: 60px auto;
+}
+
+.box {
+    border: 2px solid #e0e0e0;
+}
+
+.box .left {
+    width: 340px;
+    background-color: burlywood;
+    float: left;
+}
+
+.box .right {
+    width: 600px;
+    background-color: beige;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
 .summary {
     max-width: 800px;
     margin: 0 auto;
