@@ -1,78 +1,96 @@
-body {
-    background-color: rgba(220, 230, 228, 0.47);
-    margin: 0; /* 移除默认margin */
-    padding: 0; /* 移除默认padding */
-}
 
-.container {
-    margin: 5vh 15vw;
-    height: 80vh;
-    width: 70vw;
-    font-family: "Microsoft Yahei";
-    border: solid 3px #e0e4e6;
-    display: flex; /* 使用flex布局 */
-    overflow: hidden; /* 防止内容溢出 */
-}
 
-.left {
-    width: 30%;
-    background-color: rgb(118, 156, 203);
-    height: 100%;
-    /* 移除margin-left: 300px; 这是导致不对齐的主要原因 */
-}
+        body{
+            background-color:rgba(220, 230, 228, 0.47);
+            margin: 0; 
+            padding: 0;
+            
+        }
 
-img {
-    width: 150px; /* 补充宽度值 */
-    padding: 15px;
-    border-radius: 100px;
-    display: block; /* 使图片居中 */
-    margin: 0 auto; /* 水平居中 */
-}
+        .container{
+            margin: 5vh 15vw;
+            height: 80vh;
+            width: 70vw;
+            font-family: "Microsoft Yahei";
+            border: solid 3px #e0e4e6;
+            overflow: auto;
+            
+        }
 
-.right {
-    padding: 30px;
-    background-color: rgb(156, 174, 174);
-    width: 70%;
-    height: 100%;
-    box-sizing: border-box; /* 确保padding不影响总宽度 */
-}
+        .left{
+            
+            width:30%;
+            background-color: rgb(118, 156, 203);
+            /* margin-left: 300px; */
+            height:100%
+           
+        }
+        img{
+           width:150px ;
+           padding: 15px;
+           border-radius: 100px;
+           display: block; /* 使图片居中 */
+           margin: 0 auto; /* 水平居中 */
+        }
 
-.information {
-    padding: 30px;
-    text-align: center;
-}
+        .left, .right{
+            display: inline-block;
+            vertical-align: top; 
+        }
 
-.name {
-    font-size: 25px;
-}
+        .right{
+            padding:30px;
+            background-color: rgb(156, 174, 174);
+            width:69%;
+            /* 原来使用的是width：70%,一直不行，卡了一下午，改成69%就可以了，这是为何....  */
+            height:100%;
+            box-sizing: border-box;
+            }
 
-.ability {
-    padding: 30px;
-    text-align: center;
-}
+        .information{
+            padding: 30px;
+            text-align: center
+        }
+        
+        .name{
+            font-size: 25px;
+        }
+        
+        .ability{
+            padding: 30px;
+            text-align: center;
+        }
+        .title{
+            font-size: 25px;
+        }
 
-.title {
-    font-size: 25px;
-}
+        .title1{
+            font-size: 25px;
+        }
 
-.title1, .title2, .title3 {
-    font-size: 25px;
-}
+        .title2,.title3{
+            font-size: 25px;
+            margin-top: 30px;
+        }
 
-.title2, .title3 {
-    margin-top: 30px;
-}
+        .smalltitle{
+            font-size: 20px;
+            margin-top: 10px;
+        }
 
-.smalltitle1, .smalltitle2, .smalltitle3 {
-    font-size: 20px;
-    margin-top: 10px;
-}
 
-.Content1, .Content3 {
-    margin-top: 10px;
-}
+        .Content1{
+            margin-top: 10px;
+        }
 
-.content {
-    margin-top: 5px;
-}
+        .content{
+            margin-top: 5px;
+        }
 
+ 
+
+        .Content3{
+            margin-top: 10px;
+        }
+
+ 
